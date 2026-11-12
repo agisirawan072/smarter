@@ -2774,16 +2774,19 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 64px;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    width: 100%;
+    max-width: 100%;
+    height: 62px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-top: 2px solid #E2E8F0;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
     z-index: 1000;
     justify-content: space-around;
     align-items: center;
     padding: 0 4px env(safe-area-inset-bottom, 0px);
+    box-sizing: border-box;
 }
 
 .mobile-nav-btn {
@@ -2797,10 +2800,12 @@ body {
     outline: none;
     cursor: pointer;
     flex: 1;
+    min-width: 0;
     height: 100%;
     color: var(--text-muted);
     transition: all 160ms ease;
     padding: 6px 2px;
+    box-sizing: border-box;
 }
 
 .mobile-nav-icon {
@@ -2814,6 +2819,7 @@ body {
     font-weight: 800;
     font-family: var(--font-body);
     letter-spacing: 0.2px;
+    white-space: nowrap;
 }
 
 .mobile-nav-btn:active .mobile-nav-icon {
@@ -2840,27 +2846,35 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(15, 23, 42, 0.55);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 1200;
+    width: 100vw;
+    height: 100%;
+    height: 100dvh;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 11000;
     display: flex;
     justify-content: flex-end;
     animation: fadeIn 0.2s ease forwards;
 }
 
 .mobile-drawer-panel {
-    width: 340px;
-    max-width: 88vw;
+    width: 86vw;
+    max-width: 360px;
+    min-width: 280px;
     height: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
     background: #FFFFFF;
-    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    padding: 24px 20px 32px;
+    padding: 20px 18px calc(24px + env(safe-area-inset-bottom, 16px));
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     animation: slideInRight 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    gap: 18px;
+    gap: 16px;
+    box-sizing: border-box;
 }
 
 @keyframes slideInRight {
@@ -4124,6 +4138,88 @@ body {
     }
     .equation-text {
         font-size: 32px;
+    }
+
+    /* ── Drawer Menu Responsif di Ponsel (≤ 480px) ── */
+    .mobile-drawer-overlay {
+        width: 100vw !important;
+        height: 100% !important;
+        height: 100dvh !important;
+    }
+    .mobile-drawer-panel {
+        width: 88vw !important;
+        max-width: 340px !important;
+        padding: 16px 14px calc(24px + env(safe-area-inset-bottom, 16px)) !important;
+        gap: 14px !important;
+    }
+    .drawer-header {
+        padding-bottom: 12px !important;
+    }
+    .drawer-avatar-circle {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 22px !important;
+        border-radius: 12px !important;
+    }
+    .drawer-welcome-title {
+        font-size: 15px !important;
+    }
+    .drawer-chips-row {
+        gap: 4px !important;
+    }
+    .drawer-chip-star, .drawer-chip-streak {
+        font-size: 10.5px !important;
+        padding: 2px 6px !important;
+    }
+    .btn-close-drawer {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 16px !important;
+        border-radius: 10px !important;
+    }
+    .btn-drawer-spin {
+        padding: 10px 12px !important;
+    }
+    .drawer-spin-icon {
+        font-size: 24px !important;
+    }
+    .drawer-spin-text strong {
+        font-size: 13.5px !important;
+    }
+    .drawer-spin-text span {
+        font-size: 10.5px !important;
+    }
+    .drawer-section-label {
+        font-size: 10.5px !important;
+        margin-bottom: 6px !important;
+    }
+    .drawer-menu-list {
+        gap: 6px !important;
+    }
+    .drawer-menu-btn {
+        padding: 9px 12px !important;
+        gap: 10px !important;
+        border-radius: 14px !important;
+    }
+    .drawer-item-icon {
+        font-size: 20px !important;
+    }
+    .drawer-item-label {
+        font-size: 13.5px !important;
+    }
+    .drawer-item-desc {
+        font-size: 10.5px !important;
+    }
+    .drawer-avatar-section {
+        padding-top: 8px !important;
+    }
+    .drawer-avatar-row {
+        grid-template-columns: repeat(6, 1fr) !important;
+        gap: 5px !important;
+    }
+    .drawer-av-btn {
+        font-size: 17px !important;
+        border-radius: 10px !important;
     }
 }
 
