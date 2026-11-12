@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/smarter-data",
+      "destination": "/api/smarter-data.js"
+    },
+    {
+      "source": "/api/add-stars",
+      "destination": "/api/add-stars.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+

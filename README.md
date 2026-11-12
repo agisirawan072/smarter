@@ -194,6 +194,35 @@ Buka browser favorit Anda (Google Chrome / Microsoft Edge) dan kunjungi:
 
 ---
 
+## 🌐 Cara Deploy ke Vercel (Gratis & Langsung Online di .vercel.app)
+
+Proyek ini telah dikonfigurasi dengan berkas `vercel.json` dan *Vercel Serverless API* (`/api`), sehingga dapat langsung di-deploy secara gratis ke **Vercel** hanya dalam 3 langkah mudah:
+
+### Langkah 1: Push Proyek ke GitHub
+Buka terminal di folder `smarter` dan jalankan:
+```bash
+git init
+git add .
+git commit -m "feat: Siap deploy ke Vercel"
+git branch -M main
+git remote add origin https://github.com/USERNAME_ANDA/smarter.git
+git push -u origin main
+```
+
+### Langkah 2: Buka Vercel & Import Repositori
+1. Masuk ke **[vercel.com](https://vercel.com)** lalu login menggunakan akun GitHub Anda.
+2. Klik tombol **"Add New..."** ➔ pilih **"Project"**.
+3. Pilih repositori **`smarter`** yang baru saja Anda push, lalu klik **"Import"**.
+
+### Langkah 3: Klik Deploy
+1. Vercel akan otomatis mengenali pengaturan dari berkas `vercel.json` dan `package.json`.
+2. Klik tombol biru **"Deploy"**.
+3. Tunggu sekitar 1 menit hingga proses build selesai.
+4. 🎉 **Selamat!** Website SMARTER Anda kini telah aktif dan memiliki domain publik gratis seperti:
+   👉 **`https://smarter-alpha.vercel.app`** (bisa langsung dibagikan dan dibuka di ponsel atau komputer siapa saja).
+
+---
+
 ## 📡 Daftar Endpoint Backend API
 
 | Metode | Endpoint | Deskripsi |

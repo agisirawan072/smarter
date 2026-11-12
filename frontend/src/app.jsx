@@ -1909,9 +1909,16 @@ export default function App() {
         }
     }, [stars]);
 
+    /* ── Konfigurasi Endpoint API (Mendukung Vercel Serverless & Local Dev) ── */
+    const API_BASE = import.meta.env.VITE_API_URL || '';
+
     /* ── Fetch Bintang dari Backend ── */
     useEffect(() => {
-        fetch('http://localhost:5000/api/smarter-data')
+        const savedStars = localStorage.getItem('smarter_stars');
+        if (savedStars && !isNaN(Number(savedStars))) {
+            setStars(Number(savedStars));
+        }
+        fetch(`${API_BASE}/api/smarter-data`)
             .then(r => r.json())
             .then(data => {
                 if (data && typeof data.stars === 'number') {
@@ -1919,7 +1926,7 @@ export default function App() {
                 }
             })
             .catch(() => { });
-    }, []);
+    }, [API_BASE]);
 
     /* ── Timer Kuis ── */
     useEffect(() => {
@@ -1959,7 +1966,7 @@ export default function App() {
     /* ── Tambah Bintang ke Backend ── */
     const addStarsBackend = (amount = 10) => {
         playTone('star', soundEnabled);
-        fetch('http://localhost:5000/api/add-stars', {
+        fetch(`${API_BASE}/api/add-stars`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ amount })
