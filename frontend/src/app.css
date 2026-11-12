@@ -3141,61 +3141,89 @@ body {
 @media (max-width: 768px) {
     .navbar-container {
         position: sticky;
-        top: 0;
+        top: 6px;
         z-index: 990;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
+        padding: 0 4px;
     }
     
     .navbar-inner {
-        padding: 8px 12px;
+        padding: 6px 10px;
         border-radius: 18px;
-        gap: 8px;
+        gap: 6px;
+        justify-content: space-between;
     }
 
     .nav-brand-group {
-        gap: 8px;
+        gap: 6px;
     }
 
     .nav-logo-badge {
-        font-size: 15px;
-        padding: 5px 9px;
-        border-radius: 12px;
+        font-size: 14px;
+        padding: 4px 7px;
+        border-radius: 10px;
+    }
+    .logo-sparkle {
+        display: none;
     }
 
+    .brand-title-row {
+        gap: 2px;
+    }
+    .brand-sparkle-dot {
+        display: none;
+    }
     .brand-name-title {
-        font-size: 18px;
+        font-size: 16px;
+        letter-spacing: 0.2px;
     }
-
     .brand-tagline {
         display: none; /* Sembunyikan subteks agar navbar tetap ramping & rapi */
     }
 
     .nav-actions-group {
-        gap: 6px;
+        gap: 5px;
     }
 
     .btn-nav-spin {
-        padding: 6px 9px;
+        padding: 4px 7px;
         font-size: 12px;
+        border-radius: 12px;
     }
-
     .spin-wheel-text {
         display: none; /* Tampilkan ikon 🎡 saja di layar kecil */
     }
-
-    .nav-streak-pill {
-        padding: 6px 8px;
-        font-size: 12px;
+    .spin-wheel-icon {
+        font-size: 14px;
     }
 
+    .nav-streak-pill {
+        padding: 4px 6px;
+        font-size: 11.5px;
+        border-radius: 12px;
+        gap: 3px;
+    }
     .nav-streak-pill .streak-label-days {
         display: none; /* Singkat menjadi 🔥 3 */
     }
+    .streak-flame {
+        font-size: 13px;
+    }
+    .streak-num {
+        font-size: 12.5px;
+    }
 
     .nav-star-pill {
-        padding: 5px 9px;
+        padding: 4px 7px;
+        font-size: 11.5px;
+        gap: 3px;
+        border-radius: 12px;
+    }
+    .star-icon-3d {
         font-size: 13px;
-        gap: 4px;
+    }
+    .star-count-num {
+        font-size: 12.5px;
     }
     .nav-star-pill .star-unit-label {
         display: none;
@@ -3205,19 +3233,23 @@ body {
     }
 
     .nav-avatar-toggle {
-        padding: 2px 6px 2px 2px;
-    }
-    .avatar-frame-ring {
-        width: 28px;
-        height: 28px;
+        padding: 4px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
     }
     .avatar-current-emoji {
         font-size: 15px;
+        line-height: 1;
+    }
+    .avatar-arrow {
+        display: none;
     }
 
+    /* Di ponsel, menu drawer sudah dapat diakses via tombol "☰ Menu" di bottom navigation bar */
     .btn-hamburger-menu {
-        width: 36px;
-        height: 36px;
+        display: none !important;
     }
 
     /* ── Floating Robot Maskot Koko ── */
